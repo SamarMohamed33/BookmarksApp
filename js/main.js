@@ -1,7 +1,7 @@
 var bookmarkNameInput = document.getElementById("site-name");
 var bookmarkLinkInput = document.getElementById("site-link");
 var errorBoxElement = document.querySelector("#error-box");
-var eerr = document.querySelector(".error-boxx");
+var innerErrorBox = document.querySelector(".inner-error-box");
 var NameValidationIcons = document.querySelector(".bookmark-name-icons");
 var URLValidationIcons = document.querySelector(".bookmark-url-icons");
 
@@ -120,8 +120,9 @@ function checkURLValidation() {
 }
 
 // Adding event listener to the document to close error box when clicking outside it
-document.addEventListener("click", function (event) {
-  if (!eerr.contains(event.target) && errorBoxElement.style.display != "none") {
-    eerr.style.display = "none";
+errorBoxElement.addEventListener("click", function (event) {
+  console.log(event.target);
+  if (event.target != innerErrorBox) {
+    closeErrorBox();
   }
 });
