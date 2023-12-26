@@ -82,7 +82,7 @@ function deleteBookmarkItem(index) {
 
 // Validation functions
 function closeErrorBox() {
-  errorBoxElement.style.display = "none";
+  // errorBoxElement.style.display = "none";
   errorBoxElement.classList.remove("show-error-box");
 }
 
@@ -121,8 +121,8 @@ function checkURLValidation() {
 
 // Adding event listener to the document to close error box when clicking outside it
 errorBoxElement.addEventListener("click", function (event) {
-  console.log(event.target);
-  if (event.target != innerErrorBox) {
+  // console.log(event.target);
+  if (event.target == errorBoxElement) {
     closeErrorBox();
   }
 });
